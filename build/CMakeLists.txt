@@ -21,11 +21,6 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${PROJECT_BINARY_DIR}/../bin/${PLATFORM_NAME}/Debug)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${PROJECT_BINARY_DIR}/../bin/${PLATFORM_NAME}/Debug)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${PROJECT_BINARY_DIR}/../bin/${PLATFORM_NAME}/Release)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${PROJECT_BINARY_DIR}/../bin/${PLATFORM_NAME}/Release)
-
 set(CMAKE_DEBUG_POSTFIX D)
 
 if(APPLE)
@@ -124,7 +119,7 @@ set(GORILLA_INCLUDE
   ${INCLUDE_DIR}/gorilla/gau.h
   ${INCLUDE_DIR}/gorilla/ga_internal.h
   )
-  
+
 set(GORILLA_SRC
   ${SRC_DIR}/ga.c
   ${SRC_DIR}/gau.c
@@ -136,12 +131,12 @@ set(GORILLA_COMMON_INCLUDE
   ${INCLUDE_DIR}/gorilla/common/gc_thread.h
   ${INCLUDE_DIR}/gorilla/common/gc_types.h
   )
-  
+
 set(GORILLA_COMMON_SRC
   ${SRC_DIR}/common/gc_common.c
   ${SRC_DIR}/common/gc_thread.c
   )
-  
+
 # OGG/Vorbis
 set(LIBOGGDIR ../ext/libogg)
 set(LIBVORBISDIR ../ext/libvorbis)
@@ -158,7 +153,7 @@ set(OGGVORBIS_INCLUDE
   ${LIBVORBISDIR}/include/vorbis/vorbisenc.h
   ${LIBVORBISDIR}/include/vorbis/vorbisfile.h
   )
-  
+
 set(OGGVORBIS_SRC
   ${LIBOGGDIR}/src/bitwise.c
   ${LIBOGGDIR}/src/framing.c
