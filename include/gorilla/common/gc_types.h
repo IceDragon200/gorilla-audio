@@ -30,6 +30,8 @@ extern "C"
  */
 
 #ifdef _WIN32
+#include <windows.h>
+
   typedef unsigned char     gc_uint8;
   typedef unsigned short    gc_uint16;
   typedef unsigned int      gc_uint32;
@@ -42,6 +44,9 @@ extern "C"
   typedef double            gc_float64;
 
 #elif __GNUC__ /* GCC */
+#include <stdint.h>
+#include <stddef.h>
+
   typedef unsigned char          gc_uint8;
   typedef unsigned short         gc_uint16;
   typedef unsigned int           gc_uint32;
@@ -53,11 +58,9 @@ extern "C"
   typedef float                  gc_float32;
   typedef double                 gc_float64;
 
-#include <stdint.h>
-#include <stddef.h>
 #else
 #error Types not yet specified for this platform
-  
+
 /** 8-bit  unsigned integer. \ingroup dataTypes */
 typedef unsigned char           gc_uint8;
 /** 16-bit unsigned integer. \ingroup dataTypes */
